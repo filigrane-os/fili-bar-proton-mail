@@ -1,0 +1,6 @@
+title = "Proton Mail"
+description = "New Proton mails, click opens Proton Mail"
+api = 1
+side = "right"
+order = 2
+runs = ["bar-alert"]
