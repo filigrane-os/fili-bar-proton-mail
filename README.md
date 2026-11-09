@@ -12,6 +12,10 @@ The bridge (`protonmail-bridge --noninteractive`) and `goimapnotify` start at lo
 
 `fili-bar install` also runs `install.sh`: it creates your options file from `config.example.toml`, asks for what is missing (credentials go to the keyring or to a file under `~/.config`, never to this folder) and prints what is left to do. Run it again with `fili-bar setup proton-mail`; it is safe to repeat.
 
+## Packages
+
+Declared in `module.toml` (`packages`), installed by `fili-bar install --yes`: `protonmail-bridge` (resident, ~70-200 MB), `goimapnotify` and `libsecret`.
+
 ## Personal data
 
 The bridge credentials live in the keyring. Host and port are optional: copy `config.example.toml` to `~/.config/filigrane/bar/proton-mail.toml` (never committed).

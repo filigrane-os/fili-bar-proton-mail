@@ -5,3 +5,4 @@ side = "right"
 order = 2
 runs = ["bar-alert"]
 autostart = ["protonmail-bridge --noninteractive", "while :; do goimapnotify; sleep 30; done"]
+packages = ["protonmail-bridge", "goimapnotify", "libsecret"]
