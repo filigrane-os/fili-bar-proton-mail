@@ -19,4 +19,7 @@ check "mail-notify raises the alert read by the bar" 'grep -q "bar-alert push ma
 check "no credential in the scripts" '! grep -nE "PB_(USER|PASS)=\"[^\$]" "$ROOT/bin/mail-notify"'
 check "manifest autostarts the bridge and the listener" 'grep -q "^autostart = .*protonmail-bridge.*goimapnotify" "$ROOT/module.toml"'
 
+check "extras: the fallback app menu is valid JSON" 'for f in "$ROOT"/extras/config/filigrane/appmenu/*.json; do jq -e .menus "$f" > /dev/null || exit 1; done'
+check "extras: no personal data" '! grep -rEiq "@[a-z0-9-]+[.][a-z]|/home/[a-z]" "$ROOT/extras"'
+
 exit "$fail"
