@@ -25,8 +25,8 @@ try:
     _, d = c.fetch("*", "(BODY.PEEK[HEADER.FIELDS (FROM SUBJECT)])")
     m = message_from_bytes(d[0][1])
     name, addr = parseaddr(dec(m["From"]))
-    print(html.escape(name or addr or "Expéditeur inconnu"))
-    print(html.escape(dec(m["Subject"]) or "(sans objet)"))
+    print(html.escape(name or addr or "Unknown sender"))
+    print(html.escape(dec(m["Subject"]) or "(no subject)"))
     c.logout()
 except Exception:
     pass
@@ -37,7 +37,7 @@ PY
         notify-send -a "Proton Mail" -i mail-unread "Mail · $from" "$subject"
         "$HOME/.local/bin/bar-alert" push mail "$from" "$subject"
     else
-        notify-send -a "Proton Mail" -i mail-unread "Nouveau mail" "Boîte de réception Proton"
+        notify-send -a "Proton Mail" -i mail-unread "New mail" "Proton inbox"
         "$HOME/.local/bin/bar-alert" push mail "Proton" "Nouveau mail"
     fi
 }
