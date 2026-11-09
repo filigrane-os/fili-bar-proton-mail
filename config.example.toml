@@ -1,0 +1,4 @@
+# Copy to ~/.config/filigrane/bar/proton-mail.toml (never committed).
+host = "127.0.0.1"   # Proton Bridge IMAP host
+port = 1143          # Proton Bridge IMAP port
+# Bridge user and password are NOT here: they are read from the keyring (see README).
