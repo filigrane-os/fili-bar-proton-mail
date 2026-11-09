@@ -25,4 +25,3 @@ if [ -z "$(secret-tool lookup service proton-bridge-user 2>/dev/null)" ]; then
 fi
 command -v goimapnotify >/dev/null 2>&1 || echo "goimapnotify is not installed (sudo xbps-install goimapnotify)"
 command -v protonmail-bridge >/dev/null 2>&1 || echo "protonmail-bridge is not installed (sudo xbps-install protonmail-bridge)"
-echo "goimapnotify: set onNewMail to $here/bin/mail-notify"

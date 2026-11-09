@@ -4,3 +4,4 @@ api = 1
 side = "right"
 order = 2
 runs = ["bar-alert"]
+autostart = ["protonmail-bridge --noninteractive", "while :; do goimapnotify; sleep 30; done"]

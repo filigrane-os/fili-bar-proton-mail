@@ -8,7 +8,7 @@ secret-tool store --label="Proton bridge user" service proton-bridge-user
 secret-tool store --label="Proton bridge pass" service proton-bridge-pass
 ```
 
-Run `protonmail-bridge --noninteractive`, point `goimapnotify` at the bridge with `onNewMail` set to `bin/mail-notify` (an example is in the Filigrane distribution).
+The bridge (`protonmail-bridge --noninteractive`) and `goimapnotify` start at login by themselves (`autostart` in `module.toml`). Point `goimapnotify` at the bridge with `onNewMail` set to `bin/mail-notify` in its configuration.
 
 `fili-bar install` also runs `install.sh`: it creates your options file from `config.example.toml`, asks for what is missing (credentials go to the keyring or to a file under `~/.config`, never to this folder) and prints what is left to do. Run it again with `fili-bar setup proton-mail`; it is safe to repeat.
 
