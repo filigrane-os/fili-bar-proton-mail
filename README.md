@@ -15,3 +15,11 @@ The bridge (`protonmail-bridge --noninteractive`) and `goimapnotify` start at lo
 ## Personal data
 
 The bridge credentials live in the keyring. Host and port are optional: copy `config.example.toml` to `~/.config/filigrane/bar/proton-mail.toml` (never committed).
+
+## Tests
+
+```sh
+sh tests/run.sh
+```
+
+No network and no real account: the external commands (`notify-send`, `secret-tool`, `rclone`, `ip`...) are stubs and `HOME` is a temporary folder. The checks every plugin passes (manifest, scripts parse, no personal data in the repository, `install.sh` idempotent) are in `tests/common.sh`; GitHub Actions runs them on each push.

@@ -38,6 +38,6 @@ PY
         "$HOME/.local/bin/bar-alert" push mail "$from" "$subject"
     else
         notify-send -a "Proton Mail" -i mail-unread "New mail" "Proton inbox"
-        "$HOME/.local/bin/bar-alert" push mail "Proton" "Nouveau mail"
+        "$HOME/.local/bin/bar-alert" push mail "Proton" "New mail"
     fi
 }
